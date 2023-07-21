@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #030014;
+  color: rgb(223, 223, 223);
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 52px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+p {
+  color: rgb(193, 192, 192);
+  font-size: 20px;
+  line-height: 28px;
+}
