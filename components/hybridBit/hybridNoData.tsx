@@ -18,7 +18,7 @@ export default function HybridNoData({ children }: Props) {
     baseDuration: number
   ) => {
     // console.log("Component ID:", id);
-    // console.log("Actual duration (ms):", actualDuration);
+    console.log("Actual duration (ms):", actualDuration);
     // console.log("phase: " + phase);
     // console.log("baseDuration: " + baseDuration);
     // console.log("-------------------------------");
@@ -36,7 +36,7 @@ export default function HybridNoData({ children }: Props) {
         <h2 className="mb-8">
           Mount Time: Server Component vs Client Component
         </h2>
-        <p>Client Component: {clientBitTime.toFixed(2)} ms</p>
+        <p>Client Component: {clientBitTime.toFixed(10)} ms</p>
         <p>Server Component: {serverBitTime.toFixed(2)} ms</p>
       </div>
       <section className="flex items-center justify-between gap-20 ">
