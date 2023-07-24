@@ -3,12 +3,14 @@
 import { SidebarNavItem } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export interface DocsSidebarNavProps {
   items: SidebarNavItem[];
 }
 
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
+  const [toggle, setToggle] = useState(false);
   return items.length ? (
     <div className="w-full">
       {items.map((item, index) => (
@@ -16,7 +18,29 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
           <h4 className="mb-1 rounded-md px-2 py-1 text-xl font-semibold">
             {item.title}
           </h4>
-          {item.items ? <DocsSidebarNavItems items={item.items} /> : null}
+          <h5
+            className="flex items-center justify-between p-2 cursor-pointer hover:text-gray-50"
+            onClick={() => setToggle((prev) => !prev)}
+          >
+            {item.subTitle}{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </h5>
+          {item.items && toggle ? (
+            <DocsSidebarNavItems items={item.items} />
+          ) : null}
         </div>
       ))}
     </div>
@@ -33,7 +57,9 @@ export function DocsSidebarNavItems({ items }: DocsSidebarNavProps) {
             key={index}
             href={item.href}
             className={`flex w-full items-center rounded-md p-2 hover:underline text-lg text-gray-400 ${
-              pathname === item.href ? "bg-[#060027] text-gray-100 px-4" : ""
+              pathname.endsWith(item.href)
+                ? "bg-[#060027] text-gray-100 px-4"
+                : ""
             }`}
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}

@@ -28,6 +28,11 @@ h4 {
   line-height: 30px;
 }
 
+h5 {
+  font-size: 21px;
+  line-height: 28px;
+}
+
 p {
   color: rgb(193, 192, 192);
   font-size: 20px;

@@ -1,5 +1,6 @@
 export type SidebarNavItem = {
     title: string
+    subTitle: string
     disabled?: boolean
     external?: boolean
     icon?: keyof typeof Icons

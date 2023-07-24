@@ -31,7 +31,7 @@ export default function HybridNoData({ children }: Props) {
   };
 
   return (
-    <div className="gap-10 w-1/2 h-[80vh] grid items-center">
+    <div className="gap-10 w-1/2">
       <div className="grid gap-20">
         <div>
           <h2 className="mb-8">
