@@ -13,6 +13,10 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Dynamic Routes",
                     href: "/docs/dynamic-routes"
+                },
+                {
+                    title: "Cookies and Middleware",
+                    href: "/docs/cookies"
                 }
             ],
         },
