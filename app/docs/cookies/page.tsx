@@ -7,7 +7,7 @@ const handleClick = async () => {
 };
 
 export default function Cookies() {
-  const [cookie, setCookie] = useState(null);
+  const [cookie, setCookie] = useState<{ name: string; value: string }>();
   const getCookie = async () => {
     setCookie(
       (await fetch("/api/cookies").then((res) => res.json())) as {
@@ -32,7 +32,17 @@ export default function Cookies() {
         Click me to get Cookie
       </button>
       {"Here is your Cookie: "}
-      {cookie.value}
+      {cookie?.value}
+
+      <p>Features used: </p>
+      <p>
+        {`
+          1. cookies() -> The cookies().set() method in route handler can only be called by client component. Calling from a server component will not set the cookie in browser`}
+      </p>
+      <p>2. Route Handlers</p>
+      <p>
+        3. When using cookies our route handlers will be evaluated dynamically
+      </p>
     </>
   );
 }
