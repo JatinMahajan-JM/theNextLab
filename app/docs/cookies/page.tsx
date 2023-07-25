@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const handleClick = async () => {
@@ -42,6 +43,18 @@ export default function Cookies() {
       <p>2. Route Handlers</p>
       <p>
         3. When using cookies our route handlers will be evaluated dynamically
+      </p>
+      <p>4. Middleware</p>
+      <Link href="/about" className="w-fit outline-dotted p-2">
+        Go to /about
+      </Link>
+      <p>
+        When navigating to /about the middleware is invoked and it redirect you
+        to the /docs page
+      </p>
+      <p>
+        We can directly respond from the middlware e.g. if the authentication
+        failed, we can redirect to login
       </p>
     </>
   );
